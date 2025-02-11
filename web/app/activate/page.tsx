@@ -3,6 +3,7 @@ import Header from '../signin/_header'
 import style from '../signin/page.module.css'
 import ActivateForm from './activateForm'
 import cn from '@/utils/classnames'
+import { brandConfig } from '@/config/brand'
 
 const Activate = () => {
   return (
@@ -22,7 +23,7 @@ const Activate = () => {
         <Header />
         <ActivateForm />
         <div className='px-8 py-6 text-sm font-normal text-gray-500'>
-          © {new Date().getFullYear()} LangGenius, Inc. All rights reserved.
+        © {new Date().getFullYear()} {brandConfig.name}, Inc. 保留所有权利。
         </div>
       </div>
     </div>

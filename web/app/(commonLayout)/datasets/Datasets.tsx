@@ -9,6 +9,7 @@ import DatasetCard from './DatasetCard'
 import type { DataSetListResponse, FetchDatasetsParams } from '@/models/datasets'
 import { fetchDatasets } from '@/service/datasets'
 import { useAppContext } from '@/context/app-context'
+import { brandConfig } from '@/config/brand'
 
 const getKey = (
   pageIndex: number,
@@ -61,7 +62,7 @@ const Datasets = ({
 
   useEffect(() => {
     loadingStateRef.current = isLoading
-    document.title = `${t('dataset.knowledge')} - Dify`
+    document.title = `${t('dataset.knowledge')} - ${brandConfig.name}`
   }, [isLoading])
 
   useEffect(() => {

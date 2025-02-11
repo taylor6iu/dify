@@ -1,5 +1,6 @@
 import Header from '../signin/_header'
 import style from '../signin/page.module.css'
+import { brandConfig } from '@/config/brand'
 
 import cn from '@/utils/classnames'
 
@@ -31,7 +32,7 @@ export default async function SignInLayout({ children }: any) {
           </div>
         </div>
         <div className='px-8 py-6 system-xs-regular text-text-tertiary'>
-          © {new Date().getFullYear()} LangGenius, Inc. All rights reserved.
+        © {new Date().getFullYear()} {brandConfig.name}, Inc. 保留所有权利。
         </div>
       </div>
     </div>

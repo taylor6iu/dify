@@ -6,9 +6,10 @@ import { getLocaleOnServer } from '@/i18n/server'
 import { TanstackQueryIniter } from '@/context/query-client'
 import './styles/globals.css'
 import './styles/markdown.scss'
+import { brandConfig } from '@/config/brand'
 
 export const metadata = {
-  title: 'Dify',
+  title: `${brandConfig.name}`,
 }
 
 export const viewport: Viewport = {

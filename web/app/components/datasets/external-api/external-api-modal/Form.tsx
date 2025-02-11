@@ -5,6 +5,7 @@ import { RiBookOpenLine } from '@remixicon/react'
 import type { CreateExternalAPIReq, FormSchema } from '../declarations'
 import Input from '@/app/components/base/input'
 import cn from '@/utils/classnames'
+import { brandConfig } from '@/config/brand'
 
 type FormProps = {
   className?: string
@@ -55,7 +56,7 @@ const Form: FC<FormProps> = React.memo(({
             {label[i18n.language] || label.en_US}
             {required && <span className='ml-1 text-red-500'>*</span>}
           </label>
-          {variable === 'endpoint' && (
+          {brandConfig.shouldRender && variable === 'endpoint' && (
             <a
               href={'https://docs.dify.ai/guides/knowledge-base/external-knowledge-api-documentation' || '/'}
               target='_blank'

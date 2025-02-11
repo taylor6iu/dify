@@ -8,6 +8,7 @@ import Header from '@/app/components/header'
 import { EventEmitterContextProvider } from '@/context/event-emitter'
 import { ProviderContextProvider } from '@/context/provider-context'
 import { ModalContextProvider } from '@/context/modal-context'
+import { brandConfig } from '@/config/brand'
 
 const Layout = ({ children }: { children: ReactNode }) => {
   return (
@@ -32,7 +33,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 }
 
 export const metadata = {
-  title: 'Dify',
+  title: `${brandConfig.name}`,
 }
 
 export default Layout

@@ -119,6 +119,7 @@ export default function AccountSetting({
       key: 'account-group',
       name: t('common.settings.accountGroup'),
       items: [
+        // SHOULD_RENDER 为 false 时，隐藏多语言设置
         {
           key: 'language',
           name: t('common.settings.language'),

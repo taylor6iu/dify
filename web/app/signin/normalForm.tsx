@@ -13,6 +13,7 @@ import { getSystemFeatures, invitationCheck } from '@/service/common'
 import { LicenseStatus, defaultSystemFeatures } from '@/types/feature'
 import Toast from '@/app/components/base/toast'
 import { IS_CE_EDITION } from '@/config'
+import { brandConfig } from '@/config/brand'
 
 const NormalForm = () => {
   const { t } = useTranslation()
@@ -184,22 +185,24 @@ const NormalForm = () => {
               </div>
             </div>
           </>}
-          <div className="w-full block mt-2 system-xs-regular text-text-tertiary">
-            {t('login.tosDesc')}
+          {
+            brandConfig.shouldRender && <div className="w-full block mt-2 system-xs-regular text-text-tertiary">
+              {t('login.tosDesc')}
             &nbsp;
-            <Link
-              className='system-xs-medium text-text-secondary hover:underline'
-              target='_blank' rel='noopener noreferrer'
-              href='https://dify.ai/terms'
-            >{t('login.tos')}</Link>
+              <Link
+                className='system-xs-medium text-text-secondary hover:underline'
+                target='_blank' rel='noopener noreferrer'
+                href='https://dify.ai/terms'
+              >{t('login.tos')}</Link>
             &nbsp;&&nbsp;
-            <Link
-              className='system-xs-medium text-text-secondary hover:underline'
-              target='_blank' rel='noopener noreferrer'
-              href='https://dify.ai/privacy'
-            >{t('login.pp')}</Link>
-          </div>
-          {IS_CE_EDITION && <div className="w-hull block mt-2 system-xs-regular text-text-tertiary">
+              <Link
+                className='system-xs-medium text-text-secondary hover:underline'
+                target='_blank' rel='noopener noreferrer'
+                href='https://dify.ai/privacy'
+              >{t('login.pp')}</Link>
+            </div>
+          }
+          { brandConfig.shouldRender && IS_CE_EDITION && <div className="w-hull block mt-2 system-xs-regular text-text-tertiary">
             {t('login.goToInit')}
             &nbsp;
             <Link

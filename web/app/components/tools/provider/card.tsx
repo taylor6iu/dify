@@ -9,6 +9,7 @@ import { Tag01 } from '@/app/components/base/icons/src/vender/line/financeAndECo
 import I18n from '@/context/i18n'
 import { getLanguage } from '@/i18n/language'
 import { useStore as useLabelStore } from '@/app/components/tools/labels/store'
+import { brandConfig } from '@/config/brand'
 
 type Props = {
   active: boolean
@@ -55,7 +56,7 @@ const ProviderCard = ({
             <div className='truncate' title={collection.label[language]}>{collection.label[language]}</div>
           </div>
           <div className='flex items-center text-[10px] leading-[18px] text-gray-500 font-medium'>
-            <div className='truncate'>{t('tools.author')}&nbsp;{collection.author}</div>
+            { brandConfig.shouldRender && <div className='truncate'>{t('tools.author')}&nbsp;{collection.author}</div> }
           </div>
         </div>
       </div>
